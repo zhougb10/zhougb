@@ -1,0 +1,27 @@
+#!/bin/sh /etc/rc.common
+# Device Access Control 初始化和开机启动脚本
+# 读取 UCI 规则，生成 dnsmasq nftset 配置并应用 nftables 规则
+
+START=99
+STOP=10
+
+USE_PROCD=1
+
+start() {
+    /usr/share/device-access/apply.sh
+}
+
+stop() {
+    /usr/share/device-access/cleanup.sh 2>/dev/null || true
+}
+
+reload() {
+    stop
+    start
+}
+
+restart() {
+    stop
+    sleep 1
+    start
+}

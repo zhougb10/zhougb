@@ -1,0 +1,21 @@
+# Device Access Control - 按设备控制域名访问
+# 通过 dnsmasq nftset + nftables 实现每设备粒度的域名允许/禁止
+
+config device 'device_rules'
+	option enabled '0'
+
+# 示例：禁止 192.168.0.226 访问 facebook.com
+# config rule
+# 	option device_ip '192.168.0.226'
+# 	option domain 'facebook.com'
+# 	option action 'block'
+# 	option enabled '1'
+# 	option description ''
+
+# 示例：允许 192.168.0.50 访问 github.com（即使全局代理走国外）
+# config rule
+# 	option device_ip '192.168.0.50'
+# 	option domain 'github.com'
+# 	option action 'allow'
+# 	option enabled '1'
+# 	option description ''
