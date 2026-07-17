@@ -41,6 +41,7 @@ function action_status()
             table.insert(rules, {
                 id = s[".name"],
                 device_ip = s.device_ip or "",
+                app = s.app or "",
                 domain = s.domain or "",
                 action = s.action or "block",
                 enabled = s.enabled or "0",
