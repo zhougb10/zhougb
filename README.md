@@ -1,6 +1,6 @@
 # zhougb
 
-我的 GitHub 项目集合。
+我的 GitHub 个人主页。
 
 ## 项目
 
